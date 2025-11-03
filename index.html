@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction - Jennifer Gonzalez</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+  .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #76b900, #00d4ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 80px;
+            box-shadow: 0 0 40px rgba(118, 185, 0, 0.5);
+            animation: float 3s ease-in-out infinite;
+        }
+  .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .intro-section {
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .intro-section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .intro-section h2::before {
+            content: "👋";
+            font-size: 1.2em;
+        }
+        
+        .intro-text {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .fun-fact {
+            background: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .fun-fact h3 {
+            color: #f57c00;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .fun-fact h3::before {
+            content: "✨";
+        }
+        
+        .analysis-section {
+            margin-top: 30px;
+        }
+        
+        .success-card, .challenge-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .success-card {
+            border-top: 4px solid #4caf50;
+        }
+        
+        .challenge-card {
+            border-top: 4px solid #f44336;
+        }
+        
+        .success-card h2 {
+            color: #4caf50;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .success-card h2::before {
+            content: "📈";
+        }
+        
+        .challenge-card h2 {
+            color: #f44336;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .challenge-card h2::before {
+            content: "⚠️";
+        }
+        
+        .evidence-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .evidence-item {
+            background: #f8f9ff;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .evidence-item::before {
+            content: "•";
+            color: #667eea;
+            font-size: 1.5em;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .metric {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #667eea;
+            display: inline-block;
+            margin: 0 5px;
+        }
+        
+        .negative-metric {
+            background: linear-gradient(135deg, #f4433615 0%, #ff6b6b15 100%);
+            color: #f44336;
+        }
+        
+        .positive-metric {
+            background: linear-gradient(135deg, #4caf5015 0%, #8bc34a15 100%);
+            color: #4caf50;
+        }
+        
+        .footer {
+            background: #f8f9ff;
+            padding: 25px 40px;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .profile-image {
+                width: 120px;
+                height: 120px;
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile-section">
+                <div class="profile-image">JG</div>
+                <div>
+                    <h1>Jennifer Gonzalez</h1>
+                    <p>🇻🇪 Caracas, Venezuela → 🇧🇷 São Paulo, Brazil</p>
+                    <p>💻 Software Developer | 📚 Business Student</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <!-- INTRODUCTION -->
+            <div class="intro-section">
+                <h2>Hello Everyone!</h2>
+                
+                <p class="intro-text">
+                    My name is <strong>Jennifer Gonzalez</strong>, and I'm originally from <strong>Caracas, Venezuela</strong>. I currently live in <strong>São Paulo, Brazil</strong>, where I work as a software developer. I'm taking business courses this semester to complete my final credits, and I'm really excited to combine my technical background with business knowledge!
+                </p>
+                
+                <p class="intro-text">
+                    <strong>What I love to do for fun:</strong> I enjoy exploring São Paulo's amazing food scene—trying new restaurants and cafés is one of my favorite weekend activities! I also love coding personal projects, reading about technology trends, and spending time learning new languages (both programming and spoken ones 😊).
+                </p>
+                
+                <div class="fun-fact">
+                    <h3>Something Surprising About Me</h3>
+                    <p>Most people are surprised to learn that I taught myself to code! I started with free online resources and YouTube tutorials while I was still in Venezuela. I never thought I'd end up building a career in software development, but here I am, working on large-scale projects in one of the biggest tech hubs in Latin America. Sometimes the best paths in life are the ones we don't plan! 🚀</p>
+                </div>
+            </div>
+            
+            <!-- DOLLAR GENERAL SUCCESS -->
+            <div class="analysis-section">
+                <div class="success-card">
+                    <h2>What Made Dollar General Successful</h2>
+                    
+                    <ul class="evidence-list">
+                        <li class="evidence-item">
+                            <div>
+                                <strong>Aggressive Expansion Strategy:</strong> Dollar General opened more than <span class="metric positive-metric">700 new stores per year</span>, demonstrating strong market penetration. This rapid growth helped them reach underserved rural and urban markets where competitors weren't present.
+                            </div>
+                        </li>
+                        
+                        <li class="evidence-item">
+                            <div>
+                                <strong>Strong Initial Margins:</strong> From 2003-2005, the company maintained a gross margin of nearly <span class="metric positive-metric">29-30%</span>, showing effective pricing power and cost management during their growth phase.
+                            </div>
+                        </li>
+                        
+                        <li class="evidence-item">
+                            <div>
+                                <strong>Historic Same-Store Sales Growth:</strong> Before 2006, Dollar General achieved <span class="metric positive-metric">5-8% same-store sales growth</span>, indicating strong customer loyalty and repeat business at existing locations.
+                            </div>
+                        </li>
+                        
+                        <li class="evidence-item">
+                            <div>
+                                <strong>Improved Inventory Efficiency:</strong> Inventory turnover improved from <span class="metric positive-metric">3.8 to 4.7</span> between 2005-2007, showing better stock management and faster product movement despite operational challenges.
+                            </div>
+                        </li>
+                        
+                        <li class="evidence-item">
+                            <div>
+                                <strong>Low-Cost, High-Convenience Model:</strong> Dollar General's business model focused on small-format stores in convenient locations, serving customers who valued quick shopping trips over one-stop shopping. This differentiated them from big-box competitors like Walmart.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- DOLLAR GENERAL CHALLENGES -->
+                <div class="challenge-card">
+                    <h2>Challenges at Dollar General</h2>
+                    
+                    <ul class="evidence-list">
+                        <li class="evidence-item">
+                            <div>
+                                <strong>Dramatic Operating Margin Collapse:</strong> Operating margin plummeted from <span class="metric negative-metric">6.5% (2005) to 2.7% (2007)</span>—a decline of 58%. This shows that expansion came at the cost of profitability and operational efficiency.
+                            </div>
+                        </li>
+                        
+                        <li class="evidence-item">
+                            <div>
+                                <strong>Gross Margin Compression:</strong> Gross margin fell from <span class="metric negative-metric">29.4% to 25.8%</span> between 2005-2007 (a 3.6 percentage point drop). This indicates rising costs, competitive pricing pressure, and a shift toward lower-margin consumable products.
+                            </div>
+                        </li>
+                        
+                        <li class="evidence-item">
+                            <div>
+                                <strong>Slowing Sales Growth:</strong> Sales growth decelerated from <span class="metric negative-metric">12% (2005) to 6.8% (2006-2007)</span>, suggesting market saturation and diminishing returns from new store openings.
+                            </div>
+                        </li>
+                        
+                        <li class="evidence-item">
+                            <div>
+                                <strong>Weak Same-Store Sales:</strong> Same-store sales dropped from the historic <span class="metric negative-metric">5-8% range to just 2-3%</span>, indicating existing stores were underperforming and not generating organic growth.
+                            </div>
+                        </li>
+                        
+                        <li class="evidence-item">
+                            <div>
+                                <strong>Operational Inefficiency:</strong> The case mentions "back rooms overflowing" with inventory backlogs, showing poor space utilization and inventory management. The company grew too fast without upgrading its operational infrastructure and supply chain systems.
+                            </div>
+                        </li>
+                        
+                        <li class="evidence-item">
+                            <div>
+                                <strong>Declining Capital Efficiency:</strong> Both ROA and ROE declined during this period, meaning the company wasn't generating adequate returns on its assets and equity despite continued expansion. Growth was not translating to profitability.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Looking forward to learning from all of you and hearing about your backgrounds! 🌟</p>
+            <p><strong>Let's have a great semester together!</strong></p>
+        </div>
+    </div>
+</body>
+</html>
